@@ -1,6 +1,6 @@
 const fridgeStorage = new Map();
 const fridgeHistory = [];
-const employees = ["Dennis", "Linus", "Ole"];
+// const employees = ["Dennis", "Linus", "Ole"];
 
 const products = [
     {name: "Tomato", price: 0.30},
@@ -18,11 +18,11 @@ const products = [
 ];
 
 $("document").ready(function () {
-
-    for(let i = 0; i < employees.length; i++) {
-        let employee = employees[i];
-        $("#employees").append("<p>" + employee + "</p>");
-    }
+    //
+    // for(let i = 0; i < employees.length; i++) {
+    //     let employee = employees[i];
+    //     $("#employees").append("<p>" + employee + "</p>");
+    // }
 
     for (let i = 0; i < products.length; i++) {
         fridgeStorage.set(products[i].name, 0);
@@ -42,28 +42,33 @@ $("document").ready(function () {
         content = JSON.parse(content);
         fridgeHistory.push(...content);
     for(let i = 0; i < fridgeHistory.length; i++) {
-        $("#history tr:first").after("<tr><td>" + content[i].type + "</td><td>" + content[i].name + "</td><td>" + content[i].item + "</td><td>" + content[i].amount + "</td><td>" + content[i].time + "</td></tr>");
+        $("#history tbody").prepend("<tr><td>" + content[i].type + "</td><td>" + content[i].name + "</td><td>" + content[i].item + "</td><td>" + content[i].amount + "</td><td>" + content[i].time + "</td></tr>");
 
     }
-
+// || !employees.includes(employee)
 
     $("#addItems").click(function () {
         let amount = $("#amount").val();
-        let employee = $("#employee").val();
+        // let employee = $("#employee").val();
+        let employee = "Dennis";
         let selectedOption = $("#products option:selected").val();
-        if(amount < 0 || !employee || !employees.includes(employee)) {
+        if(amount < 0 || !employee || selectedOption === "0") {
             alert("Please fill out everything correctly: Positive amount and employee name");
         } else {
             addToStorage(employee, selectedOption, parseInt(amount));
         }
     });
 
+// || !employees.includes(employee)
     $("#removeItems").click(function () {
         let amount = $("#amount").val();
-        let employee = $("#employee").val();
+        // let employee = $("#employee").val();
+        let employee = "Dennis";
         let selectedOption = $("#products option:selected").val();
-        if(amount < 0 || !employee || !employees.includes(employee)) {
+        if(amount < 0 || !employee || selectedOption === "0") {
             alert("Please fill out everything correctly: Positive amount and employee name");
+        } else if (amount > parseInt(localStorage.getItem(selectedOption))) {
+            alert("You can't remove more than you have");
         } else {
             removeFromStorage(employee, selectedOption, parseInt(amount));
         }
@@ -87,13 +92,22 @@ function dateFinder () {
     if(minute < 10) {
         minute = "0" + minute;
     }
+    if(hour < 10) {
+        hour = "0" + hour;
+    }
+    if(day < 10) {
+        day = "0" + day;
+    }
+    if(month < 10) {
+        month = "0" + month;
+    }
 
     return day + "/" + month + "/" + year + " " + hour + ":" + minute + ":" + second
 }
 
 function updateHistory (id, type, name, item, amount, time) {
     let content = "<tr><td>" + type + "</td><td>" + name + "</td><td>" + item + "</td><td>" + amount + "</td><td>" + time + "</td></tr>";
-    $("#history tr:first").after(content);
+    $("#history tbody").prepend(content);
 }
 
 function updateStorage (item, totalAmount) {
@@ -102,10 +116,11 @@ function updateStorage (item, totalAmount) {
     if (totalAmount < 3) {
         color = "red";
     } else {
-        color = "white";
+        color = "black";
     }
     let data = $("#storage td:contains(" + item + ")");
     data.next().text(totalAmount).css("color", color);
+
 }
 
 function addToStorage (employee, item, amount) {

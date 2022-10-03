@@ -1,108 +1,108 @@
-#productsDiv {
-    margin: 20px;
-    border: 1px solid black;
-    color: white;
-    font-size: 25px;
-}
+/*#productsDiv {*/
+/*    margin: 20px;*/
+/*    border: 1px solid black;*/
+/*    color: white;*/
+/*    font-size: 25px;*/
+/*}*/
 
-#buttons {
-    padding-bottom: 5px;
-    background: black;
-    border-radius: 8px;
-    margin: 1px 0px 10px 20px;
+/*#buttons {*/
+/*    padding-bottom: 5px;*/
+/*    background: black;*/
+/*    border-radius: 8px;*/
+/*    margin: 1px 0px 10px 20px;*/
 
-}
+/*}*/
 
-input {
-    width: 100%;
-}
+/*input {*/
+/*    width: 100%;*/
+/*}*/
 
-#items {
-    margin: 20px;
-    color: white;
-    display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid white;
-    width: 96%;
-}
+/*#items {*/
+/*    margin: 20px;*/
+/*    color: white;*/
+/*    display: inline-block;*/
+/*    padding: 10px 20px;*/
+/*    border: 1px solid white;*/
+/*    width: 96%;*/
+/*}*/
 
-#amount {
-    margin: 5px;
-}
+/*#amount {*/
+/*    margin: 5px;*/
+/*}*/
 
-#employee {
-    margin: 5px;
-}
+/*#employee {*/
+/*    margin: 5px;*/
+/*}*/
 
-body {
-    background: white;
-}
+/*body {*/
+/*    background: white;*/
+/*}*/
 
-#container {
-    background: black;
-    padding: 15px;
-    border-radius: 8px;
-}
+/*#container {*/
+/*    background: black;*/
+/*    padding: 15px;*/
+/*    border-radius: 8px;*/
+/*}*/
 
-#app {
-    border: 4px solid black;
-    height: 50%;
-    margin: 0 auto;
-    padding: 0px 10px 10px 10px;
-    width: 40%;
-    background-color: black;
-}
+/*#app {*/
+/*    border: 4px solid black;*/
+/*    height: 50%;*/
+/*    margin: 0 auto;*/
+/*    padding: 0px 10px 10px 10px;*/
+/*    width: 40%;*/
+/*    background-color: black;*/
+/*}*/
 
-h1 {
-    text-align: center;
-    color: white;
-    border-bottom: 1px solid white;
-    padding-bottom: 5px;
-}
+/*h1 {*/
+/*    text-align: center;*/
+/*    color: white;*/
+/*    border-bottom: 1px solid white;*/
+/*    padding-bottom: 5px;*/
+/*}*/
 
-#storage {
-    color: white;
-}
+/*#storage {*/
+/*    color: white;*/
+/*}*/
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+/*table {*/
+/*    font-family: arial, sans-serif;*/
+/*    border-collapse: collapse;*/
+/*    width: 100%;*/
+/*}*/
 
-td, th {
-    border: 1px solid #dddddd;
-    text-align: center;
-    padding: 8px;
-}
+/*td, th {*/
+/*    border: 1px solid #dddddd;*/
+/*    text-align: center;*/
+/*    padding: 8px;*/
+/*}*/
 
-tr:nth-child(even) {
-    background-color: darkblue;
-}
+/*tr:nth-child(even) {*/
+/*    background-color: darkblue;*/
+/*}*/
 
-#storage {
-    border-top: 1px solid white;
-    margin-top: 40px;
-    padding-top: 20px;
-}
+/*#storage {*/
+/*    border-top: 1px solid white;*/
+/*    margin-top: 40px;*/
+/*    padding-top: 20px;*/
+/*}*/
 
-#tableHistory {
-    color: white;
-}
+/*#tableHistory {*/
+/*    color: white;*/
+/*}*/
 
-h2 {
-    text-align: center;
-    color: white;
-    padding-bottom: 5px;
-}
+/*h2 {*/
+/*    text-align: center;*/
+/*    color: white;*/
+/*    padding-bottom: 5px;*/
+/*}*/
 
-#history {
-    border-top: 1px solid white;
-    margin-top: 40px;
-    padding-top: 20px;
-}
+/*#history {*/
+/*    border-top: 1px solid white;*/
+/*    margin-top: 40px;*/
+/*    padding-top: 20px;*/
+/*}*/
 
-#employees {
-    color: white;
-    margin-top: 20px;
-}
+/*#employees {*/
+/*    color: white;*/
+/*    margin-top: 20px;*/
+/*}*/
