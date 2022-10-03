@@ -35,7 +35,7 @@ input {
 }
 
 body {
-    background: darkslategray;
+    background: white;
 }
 
 #container {
@@ -100,4 +100,9 @@ h2 {
     border-top: 1px solid white;
     margin-top: 40px;
     padding-top: 20px;
+}
+
+#employees {
+    color: white;
+    margin-top: 20px;
 }

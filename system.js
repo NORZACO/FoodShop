@@ -1,6 +1,6 @@
 const fridgeStorage = new Map();
 const fridgeHistory = [];
-// const employees = [];
+const employees = ["Dennis", "Linus", "Ole"];
 
 const products = [
     {name: "Tomato", price: 0.30},
@@ -18,6 +18,11 @@ const products = [
 ];
 
 $("document").ready(function () {
+
+    for(let i = 0; i < employees.length; i++) {
+        let employee = employees[i];
+        $("#employees").append("<p>" + employee + "</p>");
+    }
 
     for (let i = 0; i < products.length; i++) {
         fridgeStorage.set(products[i].name, 0);
@@ -37,7 +42,7 @@ $("document").ready(function () {
         content = JSON.parse(content);
         fridgeHistory.push(...content);
     for(let i = 0; i < fridgeHistory.length; i++) {
-        $("#history table").append("<tr><td>" + content[i].type + "</td><td>" + content[i].name + "</td><td>" + content[i].item + "</td><td>" + content[i].amount + "</td><td>" + content[i].time + "</td></tr>");
+        $("#history tr:first").after("<tr><td>" + content[i].type + "</td><td>" + content[i].name + "</td><td>" + content[i].item + "</td><td>" + content[i].amount + "</td><td>" + content[i].time + "</td></tr>");
 
     }
 
@@ -46,7 +51,7 @@ $("document").ready(function () {
         let amount = $("#amount").val();
         let employee = $("#employee").val();
         let selectedOption = $("#products option:selected").val();
-        if(amount < 0 || !employee) {
+        if(amount < 0 || !employee || !employees.includes(employee)) {
             alert("Please fill out everything correctly: Positive amount and employee name");
         } else {
             addToStorage(employee, selectedOption, parseInt(amount));
@@ -57,7 +62,7 @@ $("document").ready(function () {
         let amount = $("#amount").val();
         let employee = $("#employee").val();
         let selectedOption = $("#products option:selected").val();
-        if(amount < 0 || !employee) {
+        if(amount < 0 || !employee || !employees.includes(employee)) {
             alert("Please fill out everything correctly: Positive amount and employee name");
         } else {
             removeFromStorage(employee, selectedOption, parseInt(amount));
@@ -88,7 +93,7 @@ function dateFinder () {
 
 function updateHistory (id, type, name, item, amount, time) {
     let content = "<tr><td>" + type + "</td><td>" + name + "</td><td>" + item + "</td><td>" + amount + "</td><td>" + time + "</td></tr>";
-    $("#history table").append(content);
+    $("#history tr:first").after(content);
 }
 
 function updateStorage (item, totalAmount) {
@@ -145,7 +150,6 @@ function removeFromStorage (employee, item, amount) {
 
     let itemAmount = localStorage.getItem(item);
     let totalAmount = itemAmount - amount;
-    console.log(totalAmount);
     localStorage.setItem(item, totalAmount);
     updateStorage(item, totalAmount);
 }
