@@ -23,6 +23,9 @@ $("document").ready(function () {
         fridgeStorage.set(products[i].name, 0);
         let name = products[i].name;
         let price = products[i].price;
+        if (localStorage.getItem(name) === null) {
+            localStorage.setItem(name, "0");
+        }
         let amount = parseInt(fridgeStorage.get(name)) + parseInt(localStorage.getItem(name));
         updateStorage(name, amount);
         $("#products").append(`<option value="${name}">${name}</option>`);
