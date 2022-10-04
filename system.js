@@ -53,6 +53,8 @@ $("document").ready(function () {
         let selectedOption = $("#products option:selected").val();
         if(amount < 0 || !employee || selectedOption === "0" || amount === "") {
             alert("Please fill out everything correctly: Positive amount and employee name");
+        } else if (amount > 100) {
+            alert("You can't add more than 100 items at once");
         } else {
             addToStorage(employee, selectedOption, parseInt(amount));
         }
