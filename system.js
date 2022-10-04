@@ -1,6 +1,5 @@
 const fridgeStorage = new Map();
 const fridgeHistory = [];
-// const employees = ["Dennis", "Linus", "Ole"];
 
 const products = [
     {name: "Tomato", price: 0.30},
@@ -18,12 +17,9 @@ const products = [
 ];
 
 $("document").ready(function () {
-    //
-    // for(let i = 0; i < employees.length; i++) {
-    //     let employee = employees[i];
-    //     $("#employees").append("<p>" + employee + "</p>");
-    // }
+
     let totalPrice = 0;
+
     for (let i = 0; i < products.length; i++) {
         fridgeStorage.set(products[i].name, 0);
         let name = products[i].name;
@@ -45,15 +41,14 @@ $("document").ready(function () {
         let content = localStorage.getItem("fridgeHistory");
         content = JSON.parse(content);
         fridgeHistory.push(...content);
+
     for(let i = 0; i < fridgeHistory.length; i++) {
         $("#history tbody").prepend("<tr><td>" + content[i].type + "</td><td>" + content[i].name + "</td><td>" + content[i].item + "</td><td>" + content[i].amount + "</td><td>" + (content[i].price * content[i].amount).toFixed(2) + "$" + "</td><td>" + content[i].time + "</td></tr>");
 
     }
-// || !employees.includes(employee)
 
     $("#addItems").click(function () {
         let amount = $("#amount").val();
-        // let employee = $("#employee").val();
         let employee = "Dennis";
         let selectedOption = $("#products option:selected").val();
         if(amount < 0 || !employee || selectedOption === "0" || amount === "") {
@@ -64,10 +59,8 @@ $("document").ready(function () {
         priceStorage();
     });
 
-// || !employees.includes(employee)
     $("#removeItems").click(function () {
         let amount = $("#amount").val();
-        // let employee = $("#employee").val();
         let employee = "Dennis";
         let selectedOption = $("#products option:selected").val();
 
@@ -195,47 +188,3 @@ function removeFromStorage (employee, item, amount) {
     localStorage.setItem(item, totalAmount);
     updateStorage(item, totalAmount);
 }
-
-
-
-
-
-// addItems("Dennis", "Tomato", 4);
-// console.log(fridgeStorage);
-// console.log(fridgeHistory);
-
-// class Item {
-//     constructor(name, price) {
-//         this.name = name;
-//         this.price = price;
-//     }
-// }
-
-// const item = fridgeHistory[0].name;
-// console.log(item);
-// console.log(products);
-
-// class Employee {
-//     constructor(name) {
-//         this.name = name;
-//         this.history = [];
-//     }
-//
-//     addItems(item, amount) {
-//         addToStorage(this.name, item, amount);
-//     }
-//
-//     removeItems(item, amount) {
-//         removeFromStorage(this.name, item, amount);
-//     }
-//
-// }
-
-// const dennis = new Employee("Dennis");
-
-
-// function log() {
-//     console.log(fridgeStorage);
-//     console.log(fridgeHistory);
-// }
-
