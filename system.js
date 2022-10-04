@@ -43,7 +43,7 @@ $("document").ready(function () {
         fridgeHistory.push(...content);
 
     for(let i = 0; i < fridgeHistory.length; i++) {
-        $("#history tbody").prepend("<tr><td>" + content[i].type + "</td><td>" + content[i].name + "</td><td>" + content[i].item + "</td><td>" + content[i].amount + "</td><td>" + (content[i].price * content[i].amount).toFixed(2) + "$" + "</td><td>" + content[i].time + "</td></tr>");
+        $("#history tbody").prepend("<tr><td>" + content[i].type + "</td><td>" + content[i].name + "</td><td>" + content[i].item + "</td><td>" + content[i].amount + "</td><td>" + content[i].price.toFixed(2) + "$" + "</td><td>" + content[i].time + "</td></tr>");
 
     }
 
