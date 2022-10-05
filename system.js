@@ -14,11 +14,13 @@ const products = [
     {name: "Turnip", price: 0.60},
     {name: "Parsnip", price: 0.90},
     {name: "Mushroom", price: 1.40}
+
 ];
 
 $("document").ready(function () {
 
     let totalPrice = 0;
+    localStorage.setItem("fridgeHistory", JSON.stringify(fridgeHistory));
 
     for (let i = 0; i < products.length; i++) {
         fridgeStorage.set(products[i].name, 0);
