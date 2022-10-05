@@ -1,6 +1,9 @@
+THIS IS MY SOLUTION TO THE TASK I MADE
+
+
 # FoodShop #
 
-Solution to the task:
+TASK:
 
 ##############################
 
