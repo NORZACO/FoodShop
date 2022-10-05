@@ -28,4 +28,12 @@ Mushroom: 1.40$
 
 ##############################
 
-FILES THAT ARE USED: INDEX.HTML & SYSTEM.JS. 
+(Employee is set to "Dennis", and is not changeable in this version)
+
+TO TEST THE SOLUTION -> 
+1. CLONE THE REPOSITORY
+2. OPEN INDEX.HTML IN CHROME.
+3. CHOOSE PRODUCT AND THE AMOUNT YOU WISH TO ADD OR REMOVE FROM STORAGE.
+
+
+
